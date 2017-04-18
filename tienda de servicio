@@ -1,4 +1,4 @@
-*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,20 +21,24 @@ public class Teinda_servicio {
         Scanner tienda = new Scanner(System.in);
         
         int cantCompras;
-        int codProducto;
+        int codProducto=0;
         int monto;
         int puntos = 0;
         int acum = 0;
         int confirmar = 0;
-        
+       
         System.out.println("Ingrese la cantidad de compras");
         cantCompras = tienda.nextInt();
         
+        
         for (int i = 0; i < cantCompras ; i++) {
+             
             System.out.println(" Ingrese un monto");
             monto=tienda.nextInt();
+           do{
             System.out.println("Ingrese un codigo");
             codProducto=tienda.nextInt();
+             } while(codProducto <99 || codProducto >300);
             
             if(monto<10000 && codProducto >= 100 && codProducto<200) {
               puntos= monto/100;  
@@ -48,6 +52,7 @@ public class Teinda_servicio {
             if(monto>10000 && codProducto >= 200 && codProducto<300) {
                 puntos = monto/30;
             }
+
             puntos= puntos * 10;
             System.out.println("cantidad puntos" +puntos);
             acum += puntos ;
@@ -74,7 +79,5 @@ public class Teinda_servicio {
             
             
         }
-        // TODO code application logic here
     }
-    
 }
