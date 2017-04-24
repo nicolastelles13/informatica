@@ -1,0 +1,77 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package simse;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dci
+ */
+public class Simse {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner simce = new Scanner(System.in);
+
+        int cantColegios, cantEstudiantes = 0, puntaje = 0, acum = 0, pMenor = 0, pMayor = 0;
+
+        System.out.println("Ingrese numero de colegios");
+        cantColegios = simce.nextInt();
+        
+            for (int i = 0; i < cantColegios; i++) {
+
+                System.out.println("Ingrese cantidad de estudiantes por colegio");
+                cantEstudiantes = simce.nextInt();
+
+             
+                for (int j = 0; j < cantEstudiantes; j++) {
+                 do {
+                    System.out.println("Ingresa los puntajes de cada estudiante");
+                    puntaje = simce.nextInt();
+                     }while(puntaje > 600 && puntaje < 0);
+                    if (puntaje < 300) {
+                         pMenor++;
+                      
+
+                    }
+                    if (puntaje >= 500) {
+                       pMayor++;
+
+                    }
+
+                }
+           
+              if(((0.7*cantEstudiantes) *100)<pMenor){
+                
+                  System.out.println("EL colegio  es INSUFICIENTE");
+              }
+              if(((0.7*cantEstudiantes)*100)>=pMayor){
+                  System.out.println("EL colegio es BUENO");
+              }
+              else System.out.println("El colegio es suficiente");
+              
+              
+              
+              
+        
+    }
+}
+}
+        
+            
+                
+            
+        
+    
+        
+        
+        
+        // TODO code application logic here
+    
+    
