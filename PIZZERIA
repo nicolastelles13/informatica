@@ -1,0 +1,121 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pizzeria;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dci
+ */
+public class Pizzeria {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner pizzeria = new Scanner(System.in);
+        
+        int cantIngredientes, cantBases = 0, ingr, pizzas = 0, costo, xd=0, total=0, costos=0, resp=0, acumpizza1 = 0,acumpizza2 = 0,acumpizza3 = 0, total1 = 0,total2 = 0,total3 = 0;
+        double cantQueso = 0, cantJamon = 0,cantTomate = 0,cantChampiñones = 0;
+        System.out.println("Ingrese cantidad de ingredientes \n 1. Bases de Pizza \n 2. Queso \n 3. Jamón \n 4. Tomate \n 5.Champiñones");
+        ingr= pizzeria.nextInt();
+        
+        switch(ingr){
+            
+            case 1:
+                System.out.println("Ingrese la cantidad de Bases de pizza");
+                cantBases=pizzeria.nextInt();
+                
+            case 2:
+                System.out.println("Ingrese la cantidad de Queso");
+                cantQueso=pizzeria.nextInt();
+            case 3: 
+                System.out.println("Ingrese la cantidad de Jamón");
+                cantJamon=pizzeria.nextInt();
+            case 4:
+                System.out.println("Ingrese la cantidad de Tomate");
+                cantTomate=pizzeria.nextInt();
+            case 5:
+                System.out.println("Ingrese la cantidad de Champiñones");
+                cantChampiñones=pizzeria.nextInt();
+        }
+      double pcantBases= cantBases* 500;
+      double pcantQueso= cantQueso * 5000;
+      double pcantJamon= cantJamon * 2500;
+      double pcantTomate = cantTomate*900;
+      double pcantChampiñones= cantChampiñones *3500;
+    
+      do{
+      
+        System.out.println("Que pizza desea llevar \n Pizza 1: 1 base de pizza. - 100 gr de queso. - 200 gr de tomate.- 100 grs de jamon. \n Pizza 2: 1 base de pizza. - 200 grs de queso. -200 grs de tomate. - 100 grs de champiñones \n Pizza 3: 1 base de pizza. - 200 grs de queso. - 200 grs de jamon. -200 grs de champiñones");
+        pizzas= pizzeria.nextInt();
+        System.out.println("¿Cuantas pizzas de tipo"+pizzas+"desea llevar <3 ?");
+        xd = pizzeria.nextInt();
+        
+        costos= (int) (pcantBases+pcantQueso+pcantJamon+pcantTomate+pcantChampiñones);
+        System.out.println("¿Desea comerse otra? Marque cualquier numero, sino marque 0");
+           resp = pizzeria.nextInt();
+            switch(pizzas){  
+            case 1:
+                System.out.println("Pizza 1");
+                cantBases= cantBases -(1*xd);
+                break;
+                cantQueso= cantQueso - (0.1*xd);
+                cantJamon= cantJamon -(0.1*xd);
+                cantTomate=cantTomate-(0.2*xd);
+                total=total*2500;
+                acumpizza1+=xd; 
+            case 2:
+                System.out.println("Pizza 2");
+                cantBases= cantBases -(1*xd);
+                cantQueso= cantQueso -(0.2*xd);
+                cantJamon= cantChampiñones - (0.1*xd);
+                cantTomate= cantTomate-(0.2*xd);
+                total=total*3000;
+                acumpizza2+=xd;
+                break;
+                
+                
+               
+                
+            case 3:
+                System.out.println("Pizza 3");
+                cantBases= cantBases -(1*xd);
+                cantQueso= cantQueso -(0.2*xd);
+                cantJamon= cantJamon -(0.2*xd);
+                cantChampiñones= cantChampiñones -(0.2*xd);
+                total=total*3500;
+                acumpizza3+=xd;
+                break;        
+                
+                
+                
+            }   } while(!(resp==0));
+            
+            xd +=xd;
+            
+    System.out.println("venta total del dia"+total);
+        System.out.println("cantidad de pizzas vendidas"+xd);
+        System.out.println("La utilidad es"+(costos-total) );
+        
+        System.out.println("Cantidad de pizza 1: "+acumpizza1+"monto" +total1);
+        System.out.println("Cantidad de pizza 2: "+acumpizza2+ "monto"+total2);
+        System.out.println("Cantidad de pizza 3: "+acumpizza3+ "monto"+total3);
+        
+                
+                
+                
+          
+            
+            
+        }
+        
+        
+        
+        
+        // TODO code application logic here
+    }
