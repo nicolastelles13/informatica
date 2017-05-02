@@ -1,0 +1,147 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package donadrian;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dci
+ */
+public class DONADRIAN {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner da = new Scanner(System.in);
+        
+        int clientes = 0,productos, codigo,precio1=1,precio2 = 1,precio3=1,precio4=1,precio5=1,precio6=1,precio7=1,otro,acumMartillo = 0,acumSierra = 0,acumTijeras = 0,acumAtornillador = 0,acumClavos = 0,acumTornillos = 0, acumYunque = 0,total=0,totalventa=0,acumClientes=0,acumPrecio1 = 0, acumPrecio2 = 0, acumPrecio3 = 0, acumPrecio4 = 0, acumPrecio5 = 0, acumPrecio6 = 0,acumPrecio7 = 0;
+        
+        System.out.println("Ingrese numero de clientes a atender");
+        clientes=da.nextInt();       
+        while(clientes>acumClientes){
+       
+        acumClientes+=1;
+      
+            do {  
+        
+        System.out.println("Ingrese el producto que desea llevar \n 210. Martillo $2990 \n 211. Sierra $3490 \n 212. Tijeras $1990 \n 213 Atornillador $2390 \n 214 Clavos $490 \n 215. Tornillos $990 \n 216. Yunque $4090 ");
+        productos=da.nextInt();
+
+        switch(productos){
+            
+            case 210: 
+                System.out.println("Martillo " + acumMartillo + " Marque 1 para continuar");
+                acumMartillo +=1;
+                acumPrecio1+=precio1;
+                precio1=da.nextInt();
+                break;
+                
+            case 211:
+                System.out.println("Sierra" + acumSierra + " Marque 1 para continuar");
+                acumSierra+=1;
+               acumPrecio2+=precio2;
+                precio2=da.nextInt();
+                break;
+                
+            case 212:
+                System.out.println("Tijeras" + acumTijeras + " Marque 1 para continuar");
+                acumTijeras+=1;
+                 acumPrecio3+=precio3; 
+                precio3=da.nextInt();
+                break;
+                
+            case 213:
+                System.out.println("Atornillador" + acumAtornillador + " Marque 1 para continuar");
+                acumAtornillador+=1;
+              acumPrecio4+=precio4;
+                precio4=da.nextInt();
+                break;
+                
+            case 214:
+                System.out.println("Clavos" + acumClavos + " Marque 1 para continuar"); 
+                acumClavos+=1;
+                acumPrecio5+=precio5;            
+                precio5=da.nextInt();
+                break;
+                
+            case 215:
+                System.out.println("Tornillos" + acumTornillos + " Marque 1 para continuar");
+                acumTornillos+=1;
+                 acumPrecio6+=precio6;
+                precio6=da.nextInt();
+                break;
+             
+            case 216:
+                System.out.println("Yunque" + acumYunque + " Marque 1 para continuar");
+                acumYunque+=1;
+               acumPrecio7+=precio7;
+                precio7=da.nextInt(); 
+                break;
+            default:
+                System.out.println("El codigo es incorrecto, reingrese un codigo correcto");
+        }
+        System.out.println("¿Desea otro pedido? Marque cualquier numero para seguir de compras o 0 para cancelar en caja");
+              otro=da.nextInt();
+              
+        }while(!(otro==0));
+        
+         totalventa=acumMartillo+acumSierra+acumTijeras+acumAtornillador+acumClavos+acumTornillos+acumYunque;
+         precio1=acumMartillo*2990;
+         
+         precio2=acumSierra*3490;
+         
+         precio3=acumTijeras*1990;
+    
+         precio4=acumAtornillador*2390;
+  
+         precio5=acumClavos*490;
+ 
+         precio6=acumTornillos*990;
+    
+         precio7=acumYunque*4090;
+     
+         total=precio1+precio2+precio3+precio4+precio5+precio6+precio7;
+       
+         
+        
+            System.out.println("BOLETA DE PAGO");
+            System.out.println("Martillo: " + acumMartillo + " TOTAL " + precio1);
+           
+            System.out.println("Sierra: " + acumSierra + " TOTAL " + precio2);
+            
+            System.out.println("TIjeras: " + acumTijeras + " TOTAL " + precio3);
+            
+            System.out.println("Atornillador: " + acumAtornillador + " TOTAL " + precio4);
+           
+            System.out.println("Clavos: " + acumClavos + " TOTAL " + precio5);
+         
+            System.out.println("Tornillos: " + acumTornillos + " TOTAL " + precio6);
+          
+            System.out.println("Yunque: " + acumYunque + " TOTAL " + precio7);
+        
+            
+            System.out.println("TOTAL FINAL");
+            System.out.println("El total a pagar es " + total);
+            System.out.println("La cantidad de productos vendidos fue " + totalventa);
+    // TODO code application logic here
+    }
+        int montodia = precio1+precio2+precio3+precio4+precio5+precio6+precio7;
+        System.out.println("TOTAL DEL DIA");
+        System.out.println("Monto de dinero total del dia " +montodia);
+        System.out.println("Numero de ventas realizadas del dia "+clientes);
+        System.out.println("DETALLES POR PRODUCTO: ");
+        System.out.println("210. MARTILLO. Numero de ventas: "+acumMartillo+" Ingresos totales: "+precio1 );
+        System.out.println("211. SIERRA. Numero de ventas: "+acumSierra+" Ingresos totales: "+precio2 );
+        System.out.println("212. TIJERAS. Numero de ventas: "+acumTijeras+" Ingresos totales: "+precio3 );
+        System.out.println("213. ATORNILLADOR. Numero de ventas: "+acumAtornillador+" Ingresos totales: "+precio4 );
+        System.out.println("214. CLAVOS. Numero de ventas: "+acumClavos+" Ingresos totales: "+precio5 );
+        System.out.println("215. TORNILLOS. Numero de ventas: "+acumTornillos+" Ingresos totales: "+precio6 );
+        System.out.println("216. YUNQUE. Numero de ventas: "+acumYunque+" Ingresos totales: "+precio7 );
+    
+}
+}
