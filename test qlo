@@ -1,0 +1,81 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package test_entrada;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dci
+ */
+public class Test_entrada {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner test = new Scanner(System.in);
+       int alumno;
+      double cantnotas =0;
+       int notas;
+       int i;
+       int N = 0;
+       int min=0;
+         double prom;
+           int max=0;
+        double suma = 0;
+       
+        System.out.println("Ingrese la cantidad de alumnos");
+        alumno=test.nextInt();
+    int cant[] = new int[alumno];
+        
+        for (i = 0; i < alumno; i++) {
+            System.out.println("Ingrese cantidad de notas del alumno nº " +(i+1));
+            cantnotas=test.nextInt();
+            
+        
+        for (int k = 0; k < cantnotas; k++) {
+            System.out.println("Ingrese la nota nº " +(k+1));    
+           cant[i]=test.nextInt();
+                suma = suma + cant[i];
+        }
+      
+
+     
+            
+      prom= (double) (suma/cantnotas); 
+    
+     
+      
+            
+      
+      
+      System.out.println("el promedio del alumno"+(i+1)+" = " +prom);
+        
+    
+        
+        
+ 
+         min=cant[i];
+          for (int j = 0; j <alumno; j++) {
+              if(min < cant[i]){
+                 
+                  
+              }
+               System.out.println("Nota minima del alumno"+(i+1)+" es " +min) ;
+          }
+          max=cant[i];
+          for (int j = 0; j < alumno; j++) {
+              if(max > cant[i]){
+                  
+                  
+              }
+           System.out.println("Nota maxima del alumno"+(i+1)+" es " +max) ;
+}
+         
+    }
+         
+}}
