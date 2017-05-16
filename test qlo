@@ -3,44 +3,53 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test_entrada;
+package javaapplication5;
 
 import java.util.Scanner;
 
 /**
  *
- * @author dci
+ * @author Karina
  */
-public class Test_entrada {
+public class JavaApplication5 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
         Scanner test = new Scanner(System.in);
        int alumno;
-      double cantnotas =0;
-       int notas;
+      int cantnotas =0;
+       int notas = 0;
        int i;
        int N = 0;
        int min=0;
          double prom;
            int max=0;
-        double suma = 0;
+        float suma = 0;
+        int k;
        
         System.out.println("Ingrese la cantidad de alumnos");
         alumno=test.nextInt();
-    int cant[] = new int[alumno];
         
-        for (i = 0; i < alumno; i++) {
-            System.out.println("Ingrese cantidad de notas del alumno nº " +(i+1));
+        System.out.println("Ingrese cantidad de notas ");
             cantnotas=test.nextInt();
             
+    int cant[][] = new int[alumno][cantnotas];
         
-        for (int k = 0; k < cantnotas; k++) {
-            System.out.println("Ingrese la nota nº " +(k+1));    
-           cant[i]=test.nextInt();
-                suma = suma + cant[i];
+        for (i = 0; i < alumno; i++) {
+            
+        
+        for (k = 0; k < cantnotas; k++) {
+            System.out.println("Ingrese la nota nº " +(k+1)+ " del alumno "+(i+1));    
+           cant[i][k]=test.nextInt();
+                
         }
       
 
@@ -48,7 +57,7 @@ public class Test_entrada {
             
       prom= (double) (suma/cantnotas); 
     
-     
+     suma = suma + cant[i][k];
       
             
       
@@ -59,17 +68,17 @@ public class Test_entrada {
         
         
  
-         min=cant[i];
+         min=cant[i][k];
           for (int j = 0; j <alumno; j++) {
-              if(min < cant[i]){
+              if(min < cant[i][k]){
                  
                   
               }
                System.out.println("Nota minima del alumno"+(i+1)+" es " +min) ;
           }
-          max=cant[i];
+          max=cant[i][k];
           for (int j = 0; j < alumno; j++) {
-              if(max > cant[i]){
+              if(max > cant[i][k]){
                   
                   
               }
@@ -79,3 +88,7 @@ public class Test_entrada {
     }
          
 }}
+        // TODO code application logic here
+    
+    
+
