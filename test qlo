@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication5;
+package testql;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Karina
  */
-public class JavaApplication5 {
+public class testql{
 
     /**
      * @param args the command line arguments
@@ -30,10 +30,10 @@ public class JavaApplication5 {
        int i;
        int N = 0;
        int min=0;
-         double prom;
+         double prom = 0;
            int max=0;
         float suma = 0;
-        int k;
+        int k = 0;
        
         System.out.println("Ingrese la cantidad de alumnos");
         alumno=test.nextInt();
@@ -44,51 +44,75 @@ public class JavaApplication5 {
     int cant[][] = new int[alumno][cantnotas];
         
         for (i = 0; i < alumno; i++) {
-            
         
         for (k = 0; k < cantnotas; k++) {
             System.out.println("Ingrese la nota nº " +(k+1)+ " del alumno "+(i+1));    
            cant[i][k]=test.nextInt();
                 
         }
+        }
       
+        
+        
+        for (i = 0; i < alumno; i++) {
+            System.out.println("Las notas del alumno "+(i+1));
+            for ( k = 0; k < cantnotas; k++) {
+                System.out.print(cant[i][k]+"  ");
+            }
+            System.out.println(" ");
+        }
+        
 
-     
-            
-      prom= (double) (suma/cantnotas); 
-    
-     suma = suma + cant[i][k];
-      
-            
-      
-      
-      System.out.println("el promedio del alumno"+(i+1)+" = " +prom);
-        
-    
-        
-        
  
-         min=cant[i][k];
-          for (int j = 0; j <alumno; j++) {
-              if(min < cant[i][k]){
-                 
-                  
+    
+          for (i = 0; i <alumno; i++) {
+              suma = 0 ;
+              max= cant[i][0];
+              min= cant[i][0];
+          
+          
+          
+          for (k = 0; k < cantnotas; k++) {
+              suma= (float) (suma + cant[i][k]);
+              if(max < cant[i][k]){
+                  max=cant[i][k];
               }
-               System.out.println("Nota minima del alumno"+(i+1)+" es " +min) ;
+              if(min > cant[i][k]){
+ 
+              min= cant[i][k];
+              }
           }
-          max=cant[i][k];
-          for (int j = 0; j < alumno; j++) {
-              if(max > cant[i][k]){
-                  
-                  
-              }
-           System.out.println("Nota maxima del alumno"+(i+1)+" es " +max) ;
-}
-         
+              prom= (double) (suma/cantnotas); 
+              System.out.println("======================================");
+          System.out.println("Nota minima del alumno "+(i+1)+ " es " +min) ;
+        System.out.println("Ll promedio del alumno "+(i+1)+" = " +prom);
+          System.out.println("Nota maxima del alumno "+(i+1)+ " es " +max) ;
+    }  
+          System.out.println("=========================================");
+          
+          for (i = 0; i < cantnotas; i++) {
+              System.out.print("\t Nota "+(i+1));
+              
+              
+        }System.out.print("\t Min  \t MAX  \t Prom");
+          System.out.println("");
+          
+        for ( i = 0; i < alumno; i++) {
+            System.out.print("ALumno "+(i+1)+ " | ");
+            
+            
+            for (k = 0; k < cantnotas; k++) {
+                System.out.print(""+cant[i][k]+"\t");
+            
+           
+              
+        }
+            
+         System.out.print(min+ " \t");
+              System.out.print(max+ " \t");
+              System.out.print(prom+ " \t");
+              System.out.println("");
+        }    
+        
     }
-         
-}}
-        // TODO code application logic here
-    
-    
-
+}
