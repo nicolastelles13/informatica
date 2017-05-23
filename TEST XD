@@ -1,0 +1,91 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package testarreglos2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author dci
+ */
+public class Testarreglos2 {
+static final int N = 10;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int [] arreglo = new int[N];
+        int [] horaextra = new int [N];
+     ingresar(arreglo);
+   horasextra(arreglo);
+   resultados(arreglo,horaextra);
+   salario(arreglo,horaextra);
+   
+   
+    }
+    
+    public static void ingresar(int[] empleados){
+        Scanner xd = new Scanner(System.in);
+     int empleado;
+        for (int i = 0; i < N; i++) {
+            System.out.println("Ingrese cantidad de horas mensuales trabajadas para el empleados "  + (i+1) );
+            empleados[i]= xd.nextInt();
+        }
+       
+    }
+    
+    public static void horasextra(int[] empleados){
+        System.out.println("Horas totales de los empleados\n");
+        for (int i = 0; i < N; i++) {
+            System.out.println("El empleado "+(i+1)+ "tuvo " +empleados[i]+ "horas");
+        }
+             System.out.println("********************************");
+            
+           
+        
+}
+    public static void resultados(int[] empleados, int[] arreglos){
+        
+        for (int i = 0; i < N; i++) {
+            int rest = 0;
+            if(empleados[i] > 160){
+          
+                rest= empleados[i] - 160;
+                if(rest >= 1 && rest <= 3){
+                arreglos[i]= rest * 2000;
+            }
+                if(rest >= 4 && rest <= 7){
+                arreglos[i]= rest * 3000;
+            }
+                if(rest > 7){
+                arreglos[i]= rest * 3500;
+            }
+        } else arreglos[i]=0;
+            
+        
+    }
+
+    }
+        
+    public static void salario(int[] empleados, int[] arreglos ){
+       
+        int sueldoFinal;
+        
+       
+       
+        for (int i = 0; i < N; i++) {
+            if (empleados[i]>160){
+                sueldoFinal = (60 *5000) + arreglos[i];
+                
+                System.out.println("EL sueldo del empleado "+(i+1)+ " es de "+sueldoFinal);
+            }
+            if(empleados[i] <= 160){
+                sueldoFinal = empleados[i]*5000;
+                System.out.println("El sueldo del empleado " +(i+1)+  " es de  "+sueldoFinal);
+            }
+        }
+        }
+}
