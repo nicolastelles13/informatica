@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mayuyminuinter;
+
+   import java.util.Scanner;
+
+public class MayuYMinuInter{
+public static void main(String[] args){
+Scanner dx = new Scanner(System.in);
+
+System.out.print("Escribe algo: ");
+String texto = dx.nextLine();
+System.out.print("\n"+texto+"\n\n");
+for(int i=0; i < texto.length(); i++){
+if(i % 2 == 0){
+String texto2 = Character.toString(texto.charAt(i));
+System.out.print(texto2.toUpperCase());
+}
+else{
+System.out.print(texto.charAt(i));
+}
+}
+System.out.println("\n");
+}
+}
