@@ -1,0 +1,64 @@
+*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejercio;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class Ejercio {
+
+    /**
+     * @param args the command line arguments
+     */
+    static final int fila = 2;
+    static final int columna = 2;
+    public static void main(String[] args) {
+ 
+       int matriz[][]=new int [fila][columna];
+      ingresar(matriz);
+        System.out.println("    "+mostrar(matriz));
+    }
+    
+    public static void ingresar(int [][]matriz){
+        
+           Scanner xd = new Scanner(System.in);
+   
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                        do{
+                        if(matriz[i][j]<0 || matriz[i][j]>250){
+                               System.out.println("Error, Ingrese el numero nuevamente");
+                        }      
+                        
+        System.out.println("Ingresar numero entre el 0 y 250"); 
+        matriz[i][j]= xd.nextInt();
+                       
+            }while (matriz[i][j]<0 || matriz[i][j]>250);
+        }
+                        }
+}
+    public static int mostrar(int [][]matriz){
+          Scanner xd = new Scanner(System.in);
+       int x;
+       int suma = 0;
+    float promedio = 0;
+       
+        System.out.println("Ingresar fila a mostrar");
+        x=xd.nextInt();
+        x= x -1 ;
+        for (int i = 0; i < 2; i++) {
+             
+        suma = suma + matriz[x][i];
+        promedio = suma/2;
+        }
+        return suma;
+    }
+    }
+
+    
