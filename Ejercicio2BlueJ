@@ -1,0 +1,30 @@
+public class EJERCICIO1{
+
+public static int sueldo;
+public static int horasextra;
+public static int horas;
+public static int ventas;
+public static double extra;
+ public void main(String args[]){
+    Scanner intro = new Scanner(System.in);
+    for(int i = 0; i < 4 ; i++){
+    System.out.println("Ingrese cantidad de horas trabajadas en la semana "+ i+1);
+     horas = intro.nextInt();
+  
+       }
+}  
+public void sueldo(){
+    if(horas > 40){
+        horasextra= horas - 40;
+        sueldo = 80000 + (3000*horasextra);
+        } else {
+            sueldo = horas + 2000;
+            }
+    if(ventas > 300000){
+        extra = ventas * 0.5;
+        }
+    if(ventas > 500000){
+        extra = ventas * 0.10;
+        }
+    }
+}
