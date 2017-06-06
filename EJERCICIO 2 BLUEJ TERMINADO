@@ -1,0 +1,87 @@
+package ejercicio2;
+
+import java.util.Scanner;
+
+
+public class Ejercicio2 {
+
+    
+    public static void main(String[] args) {
+      Scanner intro = new Scanner(System.in);
+      int horas ;
+      int ventas ;
+      
+     System.out.println("Ingrese cantidad de horas trabajadas en la semana ");
+     horas = intro.nextInt();
+     
+     System.out.println("Ingrese cantidad de ventas en la semana ");
+     ventas = intro.nextInt();
+ 
+     Vendedor vender = new Vendedor(horas, ventas);
+      
+        System.out.println("El sueldo semanal es " + vender.HorasExtra());
+        System.out.println("El sueldo mensual es " + (vender.HorasExtra())*4);
+        
+    }
+    
+    
+}
+
+------------------------------------------------------------------------------------------------------------------
+
+package ejercicio2;
+
+public class Vendedor {
+    
+    public int horas;  
+    public  int ventas;
+
+
+public void setNum(){
+    this.horas = horas;
+     }
+
+public int getNum(){
+    return horas;   
+    }
+
+public Vendedor(int horas, int ventas) {
+    this.horas = horas;
+    this.ventas= ventas;
+     }
+
+public void setNum2(){
+    this.ventas = ventas;
+    }
+public int getNum2(){
+    return ventas;   
+    }
+    
+public double HorasExtra(){
+    
+    int horasextra=0;
+    int horasextraTotal =0;
+    double sueldo = 0;
+     
+            if(this.horas > 40){
+
+               horasextra= (this.horas - 40 )* 3000;
+                horasextraTotal = 80000 + horasextra;
+                } 
+            if(this.horas <= 40){
+                    horasextraTotal = horas * 2000;
+            }
+
+            if(this.ventas > 300000){
+                sueldo =  (ventas * 0.5) + horasextraTotal;
+                }
+            if(this.ventas > 500000){
+                sueldo =  (ventas * 0.10) + horasextraTotal;
+                }
+            if(this.ventas <= 300000){
+                sueldo =  horasextra;
+            }
+            return sueldo;
+     }
+     
+}
