@@ -1,0 +1,32 @@
+
+/**
+ * Write a description of class EJERCICIO1 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+
+import java.util.Scanner;
+public class EJERCICIO1{
+    public static void main(String args[]){
+        Scanner lector= new Scanner(System.in);
+       for( int i = 0; i < 10; i++){
+       System.out.println(" Ingrese un numero del 1 al 10");
+       int numero = lector.nextInt();
+  for(int j= 1; j < numero; j++){
+ System.out.println(" el numero es " + j ); 
+
+    }
+
+      
+    int inicio=0;
+        int fin=10;
+        if(numero>fin || numero<inicio ){
+            System.out.println("Su numero no esta dentro del rango");
+        } else{
+           return;
+           
+  }
+  }  
+}
+}
