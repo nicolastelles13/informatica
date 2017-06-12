@@ -1,0 +1,21 @@
+1.-  Diferencia de clase y objeto, debe incluir 1 ejemplo.
+R:  Una clase en la programación orientada a objetos, es algo abstracto, algo que debemos definir al momento de resolver un problema.
+El objeto (instancia de la clase) es con el que podremos comunicarnos y podremos ejecutar sus métodos y acceder a sus atributos si la definición de la clase nos lo permite.
+EJEMPLO:
+La clase auto podría definir que un auto es todo objeto que tiene las siguientes características:
+
+   - Marca
+    -Modelo
+   - Año
+    -Color
+    -Número Puertas
+    -Placas
+
+De igual forma la clase auto podría definir que todo auto tiene comportamientos como:
+
+    -Arrancar
+    -Acelerar
+    -Frenar
+
+2. HERENCIA Y UN EJEMPLO
+La herencia  es la relación que existe entre dos clases, en la que una clase denominada derivada se crea a partir de otra ya existente, denominada clase base. Este concepto nace de la necesidad de construir una nueva clase y existe una clase que representa un concepto más general; en este caso la nueva clase puede heredar de la clase ya existente.
