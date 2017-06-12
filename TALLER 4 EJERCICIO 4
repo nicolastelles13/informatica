@@ -1,0 +1,169 @@
+
+package vuelotaller4;
+
+public class VueloTaller4 {
+
+  
+    public static void main(String[] args) {
+       int moneda = 0;
+       Vuelo pabellon = new Vuelo(moneda);
+       
+       pabellon.caminos();
+       pabellon.caminos2();
+       pabellon.caminos3();
+       pabellon.caminos4();
+       pabellon.caminos5();
+    }
+    
+}
+
+=================================================================================
+
+
+package vuelotaller4;
+
+public class Vuelo {
+    private int moneda;
+   String ra = "Me quedare en el pabellón RA";
+   String r1 = "Me quedare en el pabellón R1";
+   String d = "Me quedare en el pabellón D";
+   String e = "Me quedare en el pabellon E";
+   String dci = "Me quedare en el pabellon DCI";
+    private int mra;
+   private int mr1;
+   private int md;
+   private int me;
+   private int mdci;
+
+    public String getRa() {
+        return ra;
+    }
+
+    public void setRa(String ra) {
+        this.ra = ra;
+    }
+
+    public String getR1() {
+        return r1;
+    }
+
+    public void setR1(String r1) {
+        this.r1 = r1;
+    }
+
+    public String getD() {
+        return d;
+    }
+
+    public void setD(String d) {
+        this.d = d;
+    }
+
+    public String getE() {
+        return e;
+    }
+
+    public void setE(String e) {
+        this.e = e;
+    }
+
+    public String getDci() {
+        return dci;
+    }
+
+    public void setDci(String dci) {
+        this.dci = dci;
+    }
+  
+
+
+   
+    
+public Vuelo(int moneda) {
+    this.moneda = moneda;
+    }
+
+  
+
+public int getMoneda() {
+   return moneda;
+    }
+
+public void setMoneda(int moneda) {
+   this.moneda = moneda;
+    }
+
+public void caminos(){
+    System.out.println("Voy a tirar la moneda");
+    do{
+   mra = (int)((Math.random()*2)+1);
+      
+    if(mra == 1){
+        System.out.println("Ha salido Cara");
+        System.out.println(ra);
+    } 
+    }while(mra != 2);
+            System.out.println("Ha salido Sello ");       
+            System.out.println("Avanzare al siguiente edificio ");
+        
+    
+}
+public void caminos2(){
+    System.out.println("Voy a tirar la moneda");
+    do{
+   mr1 = (int)((Math.random()*2)+1);
+      
+    if(mr1 == 1){
+         System.out.println("Ha salido Cara");
+        System.out.println(r1);
+    } 
+    }while(mr1 != 2); 
+            System.out.println("Ha salido Sello ");  
+            System.out.println("Avanzare al siguiente edificio ");
+        
+    
+}
+
+public void caminos3(){
+    System.out.println("Voy a tirar la moneda");
+   md = (int)((Math.random()*2)+1);
+      
+    if(md == 1){
+        System.out.println("Ha salido Cara ");  
+        System.out.println(d);
+    } 
+    if (md == 2) {
+        System.out.println("Ha salido Sello ");  
+            System.out.println("Avanzare al siguiente edificio ");
+        }
+    
+}
+public void caminos4(){
+    System.out.println("Voy a tirar la moneda");
+   me = (int)((Math.random()*2)+1);
+      do{
+    if(me == 1){
+        System.out.println("Ha salido Cara ");  
+        System.out.println(e);
+    }
+      }while(me != 2);
+        System.out.println("Ha salido Sello ");  
+            System.out.println("Avanzare al siguiente edificio ");
+        
+    
+}
+public void caminos5(){
+    System.out.println("Voy a tirar la moneda");
+   mdci = (int)((Math.random()*2)+1);
+      do{
+    if(mdci == 1){
+        System.out.println("Ha salido Cara ");  
+        System.out.println(dci);
+    } 
+      }while(mdci != 2);
+        System.out.println("Ha salido Sello ");  
+            System.out.println("Avanzare el siguiente edificio ");
+        
+    
+}
+}
