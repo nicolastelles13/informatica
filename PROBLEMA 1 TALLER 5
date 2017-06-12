@@ -1,0 +1,129 @@
+public class Ejercicio1
+{
+
+    public static void main (String[] args ){
+
+        int a=1, b =2, c = 3, cont=0;
+        int[] correctas = new int[10];
+
+        Nota1 notas = new Nota1(correctas, cont, a, b, c);
+        notas.preguntas();
+        notas.aleatorio();
+        notas.resultado();
+    }
+
+}
+===================================================================================================================
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Nota1 {
+    public int [] alternativascorrectas;
+    public int contador;
+    public int alternativaA;
+    public int alternativaB;
+    public int alternativaC;
+
+    public Nota1(int[] correctas, int contador, int altA, int altB, int altC) {
+        this.alternativascorrectas = alternativascorrectas;
+        this.contador = contador;
+        this.alternativaA = alternativaA;
+        this.alternativaB = alternativaB;
+        this.alternativaC = alternativaC;
+   
+}
+public int[] getCorrectas() {
+        return alternativascorrectas;
+    }
+     public void setCorrectas(int[] correctas) {
+        this.alternativascorrectas = alternativascorrectas;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+
+    public int getAltA() {
+        return alternativaA;
+    }
+
+    public void setAltA(int alternativaA) {
+        this.alternativaA = alternativaA;
+    }
+
+    public int getAltB() {
+        return alternativaB;
+    }
+
+    public void setAltB(int alternativasB) {
+        this.alternativaB = alternativaB;
+    }
+
+    public int getAltC() {
+        return alternativaC;
+    }
+
+    public void setAltC(int alternativasC) {
+        this.alternativaC = alternativaC;
+    }
+   
+    public void aleatorio(){
+        int i;
+         for (i = 0; i < 10; i++) {
+           
+
+           
+        }
+    }
+    
+    public void preguntas(){
+        Scanner gl = new Scanner(System.in);
+        int i, resp = 0;
+        System.out.println("Bienvenido al Programa");
+        for (i = 0; i < 10; i++) {
+            
+            System.out.println("Ingrese la alternativa de la pregunta "+(i+1));
+            System.out.println("1. A \n2. B\n3. C ");
+            resp = gl.nextInt();
+            
+         
+           
+
+           
+ 
+            
+            contador = contador + 1;
+            
+        }
+        contador = contador * 10;
+        }
+        
+        
+    
+    
+    public void resultado(){
+        double puntaje = 0, notaFinal = 0;
+        puntaje = contador;
+        
+        if (puntaje >= 60){
+            notaFinal = (puntaje * 0.06) + 1;  
+        }
+        if (puntaje < 60){
+            notaFinal = (puntaje * 0.05) + 1;
+        }
+        System.out.println("La nota final es "+notaFinal);
+        
+        System.out.println("====================");
+        System.out.println("Ha salido del programa...");
+    }
+     
+    
+    
+}
+
+
