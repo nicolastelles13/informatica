@@ -1,0 +1,123 @@
+package ejercicio4ejemplo;
+
+import java.util.Scanner;
+
+public class Ejercicio4EJEMPLO {
+
+    public static void main(String[] args) {
+        Scanner intro = new Scanner(System.in);
+        int ingresar;
+        int acum = 0;
+        int promedio = 0;
+    
+            System.out.println("Ingrese un numero entre 100  y 200");
+            ingresar = intro.nextInt();
+            int [] numeros = new int [ingresar];
+            Metodos metodo = new Metodos(numeros);
+            
+            
+            metodo.llenarLista(ingresar);
+            metodo.numeroParImpar(ingresar);
+            metodo.ordenamiento(ingresar);
+            metodo.promedio(ingresar);
+            metodo.numeroRepite(ingresar);
+}
+        
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+package ejercicio4ejemplo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Metodos {
+ 
+    private int ingresar;
+    private int [] numeros;
+    private static ArrayList lista = new ArrayList();
+
+    public Metodos(int[] numeros) {
+        this.numeros = numeros;
+    }
+
+    
+
+    
+    public int getIngresar() {
+        return ingresar;
+    }
+
+    public int[] getNumeros() {
+        return numeros;
+    }
+    
+    
+    public void llenarLista( int ingresar){
+        for (int i = 0; i < ingresar; i++) {
+        numeros[i] = (int) ((Math.random() * 200) + 100);
+            System.out.println(numeros [i]);
+            
+        } 
+    }
+    public void numeroParImpar (int ingresar){
+        int par=0;
+        int impar=0;
+         for (int i = 0; i < ingresar; i++) {
+        if (numeros[i] % 2 == 0) {
+                par++;
+             
+            } else {
+                impar++;
+                
+            }    
+        }
+            System.out.println("Los numeros pares son: "+par);
+            System.out.println("Los numeros impares son: "+impar);
+     }
+    public void ordenamiento(int ingresar){
+        for (int i = 0; i < 10; i++) {
+            
+        lista = new ArrayList<>();
+        lista.add(numeros[i]);
+        }
+        Collections.sort(lista,Collections.reverseOrder());
+    }
+
+   public void promedio(int ingresar){
+       
+       int acum = 0;
+       int promedio = 0;
+       for (int i = 0; i < 10; i++) { 
+       acum = acum + numeros[i];
+       promedio = acum / ingresar ;
+       }  
+       System.out.println("El promedio es: "+promedio);
+   }
+   public void numeroRepite(int ingresar){
+       int num_repetido = 0;
+       int veces[] = new int [ingresar];
+       int posicion = 0;
+       for (int i = 0; i < ingresar; i++) {
+           num_repetido = numeros[i];
+           for (int j = 0; j < ingresar; j++) {
+               if(numeros[j] == num_repetido){
+                   
+               }
+           }
+       }
+       num_repetido = 0;
+       for (int k = 0; k < veces.length; k++) {
+           if(num_repetido< veces[k]){
+               num_repetido = veces[k];
+               posicion  = k;
+           }
+       }
+       System.out.println("El numero "+ numeros[posicion] + "apareció "+veces[posicion]+ " veces");
+   }
+   
+}
+   
+
+
