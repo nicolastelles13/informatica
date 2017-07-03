@@ -1,0 +1,448 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class EmpresaAgro {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      
+        ProductosComun productosC = new ProductosComun("23/01/2019", 81327283);
+        ProductosFrescos productosF = new ProductosFrescos("23/07/2017", "30/06/2017", 81327283, "Rusia");
+        ProductosFrescos productosF1 = new ProductosFrescos("21/05/2017", "15/08/2017", 81327283, "Francia");
+        ProductosRefrigerados productosR = new ProductosRefrigerados("23/01/2019",81327283, 7878237, "01/08/2017", "-10°C", "Canada");
+        ProductosRefrigerados productosR1 = new ProductosRefrigerados("25/10/2019",81327283, 7878237, "05/12/2017", "-14°C", "Peru");
+        ProductosRefrigerados productosR2 = new ProductosRefrigerados("15/05/2019",81327283, 7878237, "07/11/2017", "-12°C", "Estados Unidos");
+        ProductosCongelados productosCo = new ProductosCongelados("23/01/2019",81327283,"-15°C","Brasil","05/04/2017" );
+        CongeladoAire congeladoaire = new CongeladoAire("23/05/2018",81327283, "10°C","Chile", "21/06/2017", "15%", "10%", "5%", "12%");
+        CongeladoAire congeladoaire1 = new CongeladoAire("21/08/2018",81327283, "10°C","China", "21/06/2017", "10%", "20%", "4%", "11%");
+        CongeladosAgua congeladoagua = new CongeladosAgua("22/12/2018",81327283,"-60°C","Australia", "15/11/2017", "15 Grs / L");
+        CongeladosAgua congeladoagua1 = new CongeladosAgua("25/10/2018",81327283,"-60°C","Argentina", "15/11/2017", "18 Grs / L");
+        CongeladosNitrogeno congeladonitrogeno = new CongeladosNitrogeno("10/05/2018",81327283, "-20°C","Alemania","15/08/2017","Nitrogeno Liquido"," 35 segundos" );
+        
+        System.out.println("Productos Frescos: ");
+        System.out.println("1. Producto 1");
+        System.out.println("La fecha de envasado de este producto es: "+productosF.getFechaEnvasado());
+        System.out.println("El pais de origen de este producto es: "+productosF.getPaisOrigen());
+        System.out.println("--------------------------");
+        
+        System.out.println("2. Producto 2");
+         System.out.println("La fecha de envasado de este producto es: "+productosF1.getFechaEnvasado());
+        System.out.println("El pais de origen de este producto es: "+productosF1.getPaisOrigen());
+        
+        System.out.println("\n=============================");
+        
+        System.out.println("Productos Refrigerados: ");
+        
+        System.out.println("1. Producto 1");
+        System.out.println("EL organismo de supervision alimentaria del producto es: "+productosR.getCodigoOrganismo());
+        System.out.println("La fecha de envasado del producto es: "+productosR.getFechaEnvasado());
+        System.out.println("La temperatura de mantenimiento recomendada: "+productosR.getTemperaturaRecomendada());
+        System.out.println("Pais de origen: "+productosR.getPaisOrigen());
+        System.out.println("----------------------------");
+        System.out.println("2. Producto 2");
+        System.out.println("EL organismo de supervision alimentaria del producto es: "+productosR1.getCodigoOrganismo());
+        System.out.println("La fecha de envasado del producto es: "+productosR1.getFechaEnvasado());
+        System.out.println("La temperatura de mantenimiento recomendada: "+productosR1.getTemperaturaRecomendada());
+        System.out.println("Pais de origen: "+productosR1.getPaisOrigen());
+        System.out.println("----------------------------");
+        System.out.println("2. Producto 3");
+        System.out.println("EL organismo de supervision alimentaria del producto es: "+productosR2.getCodigoOrganismo());
+        System.out.println("La fecha de envasado del producto es: "+productosR2.getFechaEnvasado());
+        System.out.println("La temperatura de mantenimiento recomendada: "+productosR2.getTemperaturaRecomendada());
+        System.out.println("Pais de origen: "+productosR2.getPaisOrigen());
+        System.out.println("==================================");
+        
+        System.out.println("Productos Congelados");
+        System.out.println("Congelados por agua: ");
+        System.out.println("Producto 1 :");
+        System.out.println("La salinidad del agua en este producto es: "+ congeladoagua.getSalinidadAgua());
+        System.out.println("La fecha de caducidad: "+congeladoagua.getFechaCadu());
+        System.out.println("Pais de origen: "+congeladoagua.getPaisOrigen());
+        
+        System.out.println("----------------------------");
+        System.out.println("Producto 2 :");
+        System.out.println("La salinidad del agua en este producto es: "+ congeladoagua1.getSalinidadAgua());
+        System.out.println("La fecha de caducidad: "+congeladoagua1.getFechaCadu());
+        System.out.println("Pais de origen: "+congeladoagua1.getPaisOrigen());
+        System.out.println("=================================");
+        System.out.println("Congelados por aire:");
+        System.out.println("Producto 1: ");
+        System.out.println("La fecha de caducaion es: "+congeladoaire.getFechaCadu());
+        System.out.println("El pais de origen es: "+congeladoaire.getPaisOrigen());
+        System.out.println("El porcentaje de nitrogeno es: "+congeladoaire.getNitrogeno());
+        System.out.println("El porcentaje de oxigeno es:" +congeladoaire.getOxigeno());
+        System.out.println("El porcentaje de Dioxido de carbono es: "+congeladoaire.getDdeCarbono());
+        System.out.println("El porcentaje de Vapor de agua: "+congeladoaire.getVaporAgua());
+        System.out.println("----------------------------");
+        
+       System.out.println("Producto 2: ");
+        System.out.println("La fecha de caducaion es: "+congeladoaire1.getFechaCadu());
+        System.out.println("El pais de origen es: "+congeladoaire1.getPaisOrigen());
+        System.out.println("El porcentaje de nitrogeno es: "+congeladoaire1.getNitrogeno());
+        System.out.println("El porcentaje de oxigeno es:" +congeladoaire1.getOxigeno());
+        System.out.println("El porcentaje de Dioxido de carbono es: "+congeladoaire1.getDdeCarbono());
+        System.out.println("El porcentaje de Vapor de agua: "+congeladoaire1.getVaporAgua());
+        System.out.println("===================================");
+        
+        System.out.println("Congelados por nitrogeno");
+        System.out.println("Producto 1:");
+        System.out.println("La fecha de caducacion es: "+congeladonitrogeno.getFechaCadu());
+        System.out.println("El pais de origen: "+congeladonitrogeno.getPaisOrigen());
+        System.out.println("El metodo de congelacion del producto es: "+congeladonitrogeno.getMetodoCongelacion());
+        System.out.println("El tiempo de exposicion del producto es: "+congeladonitrogeno.getTiempoExposicion());
+    }
+}
+=====================================================================================================================
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class ProductosComun {
+    public String fechaCadu;
+    public int numeroLote;
+
+    public ProductosComun(String fechaCadu, int numeroLote) {
+        this.fechaCadu = fechaCadu;
+        this.numeroLote = numeroLote;
+    }
+
+   
+
+
+
+    public String getFechaCadu() {
+        return fechaCadu;
+    }
+
+    public void setFechaCadu(String fechaCadu) {
+        this.fechaCadu = fechaCadu;
+    }
+
+    public int getNumeroLote() {
+        return numeroLote;
+    }
+
+    public void setNumeroLote(int numeroLote) {
+        this.numeroLote = numeroLote;
+    }
+    
+    
+    
+    
+    
+}
+===========================================================================================================
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class ProductosCongelados extends ProductosComun{
+    public String temperatura;
+    public String paisOrigen;
+    public String fechaEnvasado;
+    
+    
+    public ProductosCongelados(String fechaCadu, int numeroLote, String temperatura, String paisOrigen, String fechaEnvasado) {
+        super(fechaCadu, numeroLote);
+        this.temperatura = temperatura;
+        this.paisOrigen = paisOrigen;
+        this.fechaEnvasado = fechaEnvasado;
+    }
+
+    public String getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(String temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public String getPaisOrigen() {
+        return paisOrigen;
+    }
+
+    public void setPaisOrigen(String paisOrigen) {
+        this.paisOrigen = paisOrigen;
+    }
+
+    public String getFechaEnvasado() {
+        return fechaEnvasado;
+    }
+
+    public void setFechaEnvasado(String fechaEnvasado) {
+        this.fechaEnvasado = fechaEnvasado;
+    }
+    
+    
+}
+===========================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class ProductosFrescos extends ProductosComun {
+        
+    public String fechaEnvasado;
+    public String paisOrigen;
+
+       public ProductosFrescos(String fechaEnvasado, String fechaCadu, int numeroLote,String paisOrigen) {
+        super(fechaCadu, numeroLote);
+        this.fechaEnvasado = fechaEnvasado;
+        this.paisOrigen=paisOrigen;
+        
+    }
+
+
+
+    public String getFechaEnvasado() {
+        return fechaEnvasado;
+    }
+
+    public void setFechaEnvasado(String fechaEnvasado) {
+        this.fechaEnvasado = fechaEnvasado;
+    }
+
+    public String getPaisOrigen() {
+        return paisOrigen;
+    }
+
+    public void setPaisOrigen(String paisOrigen) {
+        this.paisOrigen = paisOrigen;
+    }
+       
+   
+       
+    }
+==========================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class ProductosRefrigerados extends ProductosComun {
+    public int codigoOrganismo;
+    public String fechaEnvasado;
+    public String temperaturaRecomendada;
+    public String paisOrigen;
+            
+    
+    public ProductosRefrigerados(String fechaCadu, int numeroLote, int codigoOrganismo, String fechaEnvasado, String temperaturaRecomendada, String paisOrigen) {
+        super(fechaCadu, numeroLote);
+        this.codigoOrganismo = codigoOrganismo;
+        this.fechaEnvasado = fechaEnvasado;
+        this.temperaturaRecomendada = temperaturaRecomendada;
+        this.paisOrigen = paisOrigen;
+        
+    }
+
+    public int getCodigoOrganismo() {
+        return codigoOrganismo;
+    }
+
+    public void setCodigoOrganismo(int codigoOrganismo) {
+        this.codigoOrganismo = codigoOrganismo;
+    }
+
+    public String getFechaEnvasado() {
+        return fechaEnvasado;
+    }
+
+    public void setFechaEnvasado(String fechaEnvasado) {
+        this.fechaEnvasado = fechaEnvasado;
+    }
+
+    public String getTemperaturaRecomendada() {
+        return temperaturaRecomendada;
+    }
+
+    public void setTemperaturaRecomendada(String temperaturaRecomendada) {
+        this.temperaturaRecomendada = temperaturaRecomendada;
+    }
+
+    public String getPaisOrigen() {
+        return paisOrigen;
+    }
+
+    public void setPaisOrigen(String paisOrigen) {
+        this.paisOrigen = paisOrigen;
+    }
+    
+    
+    
+}
+============================================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class CongeladoAire extends ProductosCongelados{
+    public String nitrogeno;
+    public String oxigeno;
+    public String DdeCarbono;
+    public String VaporAgua;
+    
+    public CongeladoAire(String fechaCadu, int numeroLote, String temperatura, String paisOrigen, String fechaEnvasado, String nitrogeno, String oxigeno, String DdeCarbono, String VaporAgua) {
+        super(fechaCadu, numeroLote, temperatura, paisOrigen, fechaEnvasado);
+        this.nitrogeno = nitrogeno;
+        this.oxigeno = oxigeno;
+        this.DdeCarbono = DdeCarbono;
+        this.VaporAgua = VaporAgua;
+    }
+
+    public String getNitrogeno() {
+        return nitrogeno;
+    }
+
+    public void setNitrogeno(String nitrogeno) {
+        this.nitrogeno = nitrogeno;
+    }
+
+    public String getOxigeno() {
+        return oxigeno;
+    }
+
+    public void setOxigeno(String oxigeno) {
+        this.oxigeno = oxigeno;
+    }
+
+    public String getDdeCarbono() {
+        return DdeCarbono;
+    }
+
+    public void setDdeCarbono(String DdeCarbono) {
+        this.DdeCarbono = DdeCarbono;
+    }
+
+    public String getVaporAgua() {
+        return VaporAgua;
+    }
+
+    public void setVaporAgua(String VaporAgua) {
+        this.VaporAgua = VaporAgua;
+    }
+    
+    
+    
+    
+    
+}
+==================================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class CongeladosAgua extends ProductosCongelados {
+   public String SalinidadAgua;
+   public String grsLt;
+
+    public CongeladosAgua(String fechaCadu, int numeroLote, String temperatura, String paisOrigen, String fechaEnvasado, String SalinidadAgua) {
+        super(fechaCadu, numeroLote, temperatura, paisOrigen, fechaEnvasado);
+    }
+
+    public String getSalinidadAgua() {
+        return SalinidadAgua;
+    }
+
+    public void setSalinidadAgua(String SalinidadAgua) {
+        this.SalinidadAgua = SalinidadAgua;
+    }
+   
+    
+    
+    
+}
+=======================================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package empresaagro;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class CongeladosNitrogeno extends ProductosCongelados {
+    public String MetodoCongelacion;
+    public String TiempoExposicion;
+            
+    public CongeladosNitrogeno(String fechaCadu, int numeroLote, String temperatura, String paisOrigen, String fechaEnvasado, String MetodoCongelacion, String TiempoExposicion) {
+        super(fechaCadu, numeroLote, temperatura, paisOrigen, fechaEnvasado);
+        this.MetodoCongelacion = MetodoCongelacion;
+        this.TiempoExposicion = TiempoExposicion;
+    }
+
+    public String getMetodoCongelacion() {
+        return MetodoCongelacion;
+    }
+
+    public void setMetodoCongelacion(String MetodoCongelacion) {
+        this.MetodoCongelacion = MetodoCongelacion;
+    }
+
+    public String getTiempoExposicion() {
+        return TiempoExposicion;
+    }
+
+    public void setTiempoExposicion(String TiempoExposicion) {
+        this.TiempoExposicion = TiempoExposicion;
+    }
+    
+    
+}
+
+
