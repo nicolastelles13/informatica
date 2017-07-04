@@ -26,7 +26,8 @@ public class ArchivosObjetos {
             System.out.println("Menu");
             System.out.println("1.- Insertar nueca persona");
             System.out.println("2.- Leer la agenda");
-            System.out.println("3.- Salir");
+            System.out.println("3.- Buscar archivo");
+            System.out.println("4.- Salir");
             opcion = leerN.nextInt();
             switch(opcion){
                 case 1:
@@ -47,6 +48,12 @@ public class ArchivosObjetos {
                     a.leerArchivo();
                     break;
                 case 3:
+                    System.out.println("Escribe el nombre a buscar");
+                    String nombreB = leerC.nextLine();
+                    a.buscar(nombreB);
+                    
+                    break;
+                case 4:
                     break;
                 default:
                     System.out.println("opcion no valida");
@@ -57,6 +64,9 @@ public class ArchivosObjetos {
     }
         
     }
+    
+
+
     ==========================================================================================================
     /*
  * To change this license header, choose License Headers in Project Properties.
@@ -93,6 +103,13 @@ public class Persona {
     
 }
 ================================================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package archivosobjetos;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -150,9 +167,34 @@ public class Archivo {
         } catch (Exception e) {
         }
     }
+    public void buscar(String nombreB){
+        try {
+            File file = new File("agenda.txt");
+            if(file.exists()){
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                String linea;
+                boolean bandera = false;
+                while((linea = br.readLine()) != null){
+                    String contacto [] = linea.split("%"); 
+                    if(contacto[1].equals(nombreB)){
+                        bandera = true;
+                        Persona p = new Persona(contacto[0], contacto[1], contacto[2], contacto[3], contacto[4]);
+                        System.out.println("Persona encontrada: ");
+                        p.desplegar();
+                    }
+                } 
+                if(bandera==false){
+                    System.out.println("Contacto no existente");   
+                }
+            }else{
+                System.out.println("No hay nada por buscar");
+            }
+        } catch (Exception e) {
+        }
+        
+    }
 
    
     
 }
-
-
