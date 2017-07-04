@@ -1,0 +1,158 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package archivosobjetos;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class ArchivosObjetos {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Archivo a = new Archivo();
+        Scanner leerN = new Scanner(System.in);
+        Scanner leerC = new Scanner(System.in);
+      
+        int opcion = 0;
+        while(opcion!=3){
+            System.out.println("Menu");
+            System.out.println("1.- Insertar nueca persona");
+            System.out.println("2.- Leer la agenda");
+            System.out.println("3.- Salir");
+            opcion = leerN.nextInt();
+            switch(opcion){
+                case 1:
+                    System.out.println("Escribe el nombre");
+                    String nombre = leerC.nextLine();
+                    System.out.println("Escribe el Apellido paterno");
+                    String apellidoP = leerC.nextLine();
+                    System.out.println("Escribe el Apellido materno");
+                    String apellidoM = leerC.nextLine();
+                    System.out.println("Escribe el direccion");
+                    String direccion = leerC.nextLine();
+                    System.out.println("Escribe el telefono");
+                    String telefono = leerC.nextLine();
+                    Persona p = new Persona(nombre, apellidoP, apellidoM, direccion, telefono);
+                    a.escribirPersona(p);
+                    break;
+                case 2:
+                    a.leerArchivo();
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("opcion no valida");
+                    break;
+                        
+            }
+        }
+    }
+        
+    }
+    ==========================================================================================================
+    /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package archivosobjetos;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class Persona {
+    
+    String nombre, apellidoP, apellidoM, telefono, direccion;
+
+    public Persona(String nombre, String apellidoP, String apellidoM, String telefono, String direccion) {
+        this.nombre = nombre;
+        this.apellidoP = apellidoP;
+        this.apellidoM = apellidoM;
+        this.telefono = telefono;
+        this.direccion = direccion;
+    }
+    public void desplegar(){
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Apellido paterno: "+apellidoP);        
+        System.out.println("Apellido materno: "+apellidoM);
+        System.out.println("Telefono: "+telefono);
+        System.out.println("Direccion: "+direccion);    
+    }
+    
+     
+    
+    
+}
+================================================================================================================
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+
+/**
+ *
+ * @author Nicolas Telles
+ */
+public class Archivo {
+    
+    public void escribirPersona(Persona nueva){
+        
+        try {
+            
+           File file = new File("agenda.txt"); 
+           FileWriter fw;
+           BufferedWriter bw;
+           
+           if(file.exists()){
+
+            fw = new FileWriter(file, true);
+           bw = new BufferedWriter(fw);
+           bw.newLine();
+           bw.write(nueva.nombre+"%"+nueva.apellidoP+"%"+nueva.apellidoM+"%"+nueva.direccion+"%"+nueva.telefono);
+        }else{
+               fw = new FileWriter(file);
+            bw = new BufferedWriter(fw);     
+           bw.write(nueva.nombre+"%"+nueva.apellidoP+"%"+nueva.apellidoM+"%"+nueva.direccion+"%"+nueva.telefono);
+           
+           }  
+           bw.close();
+           fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    public void leerArchivo(){
+        try {
+            File file = new File("agenda.txt");
+            if(file.exists()){
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                String linea;
+                while((linea = br.readLine())!=null){
+                    String[] contacto = linea.split("%");
+                    Persona p = new Persona(contacto[0],contacto[1],contacto[2],contacto[3],contacto[4]);
+                    p.desplegar();
+                    System.out.println("*********************************");
+                }
+            }else{
+                System.out.println("AGENDA NO EXISTENTE");
+            }
+        } catch (Exception e) {
+        }
+    }
+
+   
+    
+}
+
+
