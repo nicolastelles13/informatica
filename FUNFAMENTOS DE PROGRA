@@ -1,0 +1,90 @@
+public class EleccionPresidencial {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Votacion votar = new Votacion();
+       votar.mostrarMenu();
+       
+       
+    }
+    
+}
+================================================
+package eleccionpresidencial;
+
+/**
+ *
+ * @author dci
+ */
+public class Votacion {
+    int N=15;
+    int M=4;
+     int [][] matriz = new int[N][M];
+     String [] local  = new String [N]; 
+     int votosC1;
+     int votosC2;
+     int votosC3;
+     int votosC4;
+     
+   public  void generarTabla(){
+        local[0]="ESCUELA STANDARD D-534 MATTA 0151             ";
+        local[1]="LICEO B-20 ANIBAL PINTO PINTO 0150            ";
+        local[2]="ESCUELA D-470 ARTURO PRAT GRAL MACKENNA 685   ";
+        local[3]="ESCUELA D-499 SAN ANTONIO A VARAS ESQ MATTA   ";
+        local[4]="LICEO A-23 MARCELA PAZ ANTONIO VARAS 630      ";
+        local[5]="HOGAR ESTUDIANTIL PRAT ESQ BILBAO             ";
+        local[6]="INSTITUTO CLARET ZENTENO 453                  ";
+        local[7]="LICEO A-28 P. NERUDA BALMACEDA 650            ";
+        local[8]="LICEO A-21 BALMACEDA 598                      ";
+        local[9]="ESCUELA MILLARAY RAYEN 01010                  ";
+        local[10]="ESCUELA LLAIMA COQUIMBO 745                  ";
+        local[11]="ESCUELA D-508 GABRIELA MISTRAL SN            ";
+        local[12]="ESCUELA SAN FRANCISCO MONTT 071              ";
+        local[13]="ESCUELA D-478 CAUPOLICAN 105                 ";
+        local[14]="ESC STA CAROLINA DE PEDRO DE V P DE VALDIVIA ";
+        
+        
+        
+        
+        
+       
+       for (int i = 0; i <N ; i++) {
+           for (int j = 0; j < M; j++) {
+             matriz[i][j]= (int) (Math.random() * 5000) + 1;  
+           }
+               
+           }
+            
+       }
+   public void mostrarTabla(){
+       System.out.println("Local Votación\t\t\t\t\t\t\tCandidato A\tCandidato B\tCandidato C.\tCandidato D");
+       System.out.println("");
+       for (int i = 0; i < N; i++) {
+            System.out.print(local[i]+"\t");
+           for (int j = 0; j < M; j++) {
+               System.out.print("\t\t"+matriz[i][j]);
+           }
+           System.out.println("");
+       } 
+ 
+       
+   }
+   public void calcularTotal(){
+       for (int i = 0; i < N; i++) {
+           votosC1=matriz[0][i];
+           votosC2=matriz[1][i];
+           votosC3=matriz[2][i];
+           votosC4=matriz[3][i];
+       }
+   }
+   
+   public void mostrarMenu(){
+       generarTabla();
+       mostrarTabla();
+       calcularTotal();
+       
+   }
+    
+}
