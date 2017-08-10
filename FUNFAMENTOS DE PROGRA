@@ -19,6 +19,7 @@ package eleccionpresidencial;
  * @author dci
  */
 public class Votacion {
+    Scanner intro = new Scanner(System.in);
     int N=15;
     int M=4;
      int [][] matriz = new int[N][M];
@@ -27,6 +28,9 @@ public class Votacion {
      int votosC2;
      int votosC3;
      int votosC4;
+     int sumaTotal;
+     int opc = 0;
+     
      
    public  void generarTabla(){
         local[0]="ESCUELA STANDARD D-534 MATTA 0151             ";
@@ -72,19 +76,32 @@ public class Votacion {
        
    }
    public void calcularTotal(){
-       for (int i = 0; i < N; i++) {
-           votosC1=matriz[0][i];
-           votosC2=matriz[1][i];
-           votosC3=matriz[2][i];
-           votosC4=matriz[3][i];
+       for (int i = 0; i <  M   ; i++) {
+           votosC1= votosC1 + matriz[0][i];
+           votosC2=votosC2 + matriz[1][i];
+           votosC3=votosC3+ matriz[2][i];
+           votosC4=votosC4+ matriz[3][i];
+           sumaTotal = votosC1 + votosC2 + votosC3+votosC4;
+           System.out.println(sumaTotal);
        }
    }
    
    public void mostrarMenu(){
-       generarTabla();
-       mostrarTabla();
-       calcularTotal();
        
+       System.out.println("1.Generar Tabla");
+       System.out.println("2.Mostrar Tabla");
+       System.out.println("3.Calcular Total");
+       System.out.println("Escoga una opcion");
+       opc = intro.nextInt();
+       switch(opc){
+           
+           case 1:
+       generarTabla();
+           case 2:
+       mostrarTabla();
+           case 3:
+       calcularTotal();
+   }
    }
     
 }
